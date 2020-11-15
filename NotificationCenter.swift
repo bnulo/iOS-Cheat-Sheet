@@ -8,3 +8,6 @@ NotificationCenter.default.addObserver(self, selector: #selector(doSomeThing), n
 
 // Notify
 NotificationCenter.default.post(name: .myNotification, object: nil)
+
+// Do something when notified
+@objc func doSomeThing(){ print("*** I'm notified! ***") }
