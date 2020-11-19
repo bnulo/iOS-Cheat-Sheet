@@ -1,1 +1,21 @@
+let innerView = UIView()
+innerView.translatesAutoresizingMaskIntoConstraints = false
+innerView.backgroundColor = .blue
 
+let outerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
+outerView.backgroundColor = .black
+view.addSubview(outerView)
+
+let redView = UIView()
+redView.backgroundColor = .red
+
+outerView.addSubview(innerView)
+outerView.addSubview(redView)
+NSLayoutConstraint.activate([innerView.widthAnchor.constraint(equalTo: outerView.widthAnchor, multiplier: 0.5),
+                             innerView.heightAnchor.constraint(equalToConstant: 100),
+                             innerView.topAnchor.constraint(equalTo: outerView.topAnchor, constant: 8),
+                             redView.centerXAnchor.constraint(equalTo: outerView.centerXAnchor, constant: 0),
+                             redView.centerYAnchor.constraint(equalTo: outerView.centerYAnchor, constant: 0),
+                             redView.widthAnchor.constraint(equalToConstant: 24),
+                             redView.heightAnchor.constraint(equalToConstant: 24)
+])
